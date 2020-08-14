@@ -4,7 +4,9 @@
     <Sidebar v-model="isOpen" />
     <main class="app-content" :class="{full: !isOpen}">
       <div class="app-page">
-        <router-view />
+        <keep-alive>
+          <router-view />
+        </keep-alive>
       </div>
     </main>
     <div class="fixed-action-btn">

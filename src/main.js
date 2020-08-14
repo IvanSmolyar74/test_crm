@@ -30,15 +30,15 @@ firebase.initializeApp({
   measurementId: "G-LJZMK94L3B"
 });
 
-let app;
+// let app;
 
-firebase.auth().onAuthStateChanged(() => {
-  if (!app) {
-    new Vue({
-      router,
-      store,
-      render: h => h(App)
-    }).$mount('#app')
-  }
-})
+// firebase.auth().onAuthStateChanged(() => {
+//   if (!app) {
+//   }
+// })
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
 
