@@ -28,8 +28,9 @@ export default {
       const user = firebase.auth().currentUser // обращаемся к firebase  и берем поле с пользователем
       return user ? user.uid : null // проверяем есть ли id у пользователя
     },
-    async logout() {
+    async logout({ commit }) {
       await firebase.auth().signOut()
+      commit('clearInfo') // очищаем state при выходе, чтобы сессии пользователей не пересикались
     }
   }
 }
